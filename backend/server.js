@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // MongoDB Connection
-const mongoURI = "mongodb://localhost:27017/naira_backend"; // Change "databaseName" to your actual database name
+const mongoURI = "mongodb://localhost:27017/naira_backend";
 
 mongoose
   .connect(mongoURI)
