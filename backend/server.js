@@ -29,6 +29,10 @@ mongoose
   .catch((err) => console.error("MongoDB connection error:", err));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+// Default Route to Show Backend is Running
+app.get("/", (req, res) => {
+  res.send("Project Naira Backend is Running 🚀");
+});
 // Routes
 const authRoutes = require("./routes/authRoutes");
 const profileRoutes = require("./routes/profileRoutes");
