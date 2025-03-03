@@ -44,7 +44,7 @@ const Login = () => {
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
-    const API_URL = process.env.VITE_API_URL
+    const API_URL = process.env.REACT_APP_API_URL
 
     try {
       const response = await fetch(`${API_URL}/api/auth/login`, {
@@ -71,10 +71,11 @@ const Login = () => {
 
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-    const API_URL = process.env.VITE_API_URL 
-
+    
+    const API_URL = process.env.REACT_APP_API_URL;
 
     try {
+      
       const response = await fetch(`${API_URL}/api/auth/register`, {
         method: "POST",
         headers: {

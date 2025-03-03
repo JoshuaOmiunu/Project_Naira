@@ -13,7 +13,7 @@ const Profile = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    const API_URL = process.env.VITE_API_URL
+    const API_URL = process.env.REACT_APP_API_URL
 
     if (!token) {
       navigate("/login");
@@ -82,7 +82,7 @@ const Profile = () => {
     for (let [key, value] of formData.entries()) {
       console.log(key, value);
     }
-    const API_URL = process.env.VITE_API_URL
+    const API_URL = process.env.REACT_APP_API_URL
 
 
     fetch(`${API_URL}/api/profile`, {
@@ -112,8 +112,10 @@ const Profile = () => {
   if (!user) return <p>Loading profile...</p>;
 
   // Use a default image if profilePicture is not available
+  const API_URL = process.env.REACT_APP_API_URL
+
   const profileImage =
-    user.profilePicture || "http://:5000/default-profile.jpg";
+    user.profilePicture || `${API_URL}/default-profile.jpg`;
 
   return (
     <div style={styles.pageContainer}>

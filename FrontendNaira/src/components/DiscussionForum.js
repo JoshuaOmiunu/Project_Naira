@@ -34,7 +34,7 @@ const DiscussionForum = () => {
 
       const newMessage = { name, email, text: message };
       setIsLoading(true); // Show loader
-      const API_URL = process.env.VITE_API_URL
+      const API_URL = process.env.REACT_APP_API_URL
 
       try {
         await axios.post(`${API_URL}/api/discussion`, newMessage, {

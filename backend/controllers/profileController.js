@@ -9,7 +9,7 @@ exports.getProfile = async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
-    const API_URL = process.env.VITE_API_URL || `${req.protocol}://${req.get("host")}`;
+    const API_URL = process.env.REACT_APP_API_URL || `${req.protocol}://${req.get("host")}`;
 
     // Fix the profilePicture path to be a full URL
     if (user.profilePicture) {
@@ -58,7 +58,7 @@ exports.updateProfile = async (req, res) => {
 
     if (isUpdated) {
       await user.save();
-      const API_URL = process.env.VITE_API_URL || `${req.protocol}://${req.get("host")}`;
+      const API_URL = process.env.REACT_APP_API_URL || `${req.protocol}://${req.get("host")}`;
 
 
       const imageUrl = `${API_URL}/${
