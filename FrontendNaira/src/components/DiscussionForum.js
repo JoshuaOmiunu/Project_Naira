@@ -34,9 +34,10 @@ const DiscussionForum = () => {
 
       const newMessage = { name, email, text: message };
       setIsLoading(true); // Show loader
+      const API_URL = process.env.VITE_API_URL
 
       try {
-        await axios.post("http://localhost:5000/api/discussion", newMessage, {
+        await axios.post(`${API_URL}/api/discussion`, newMessage, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
