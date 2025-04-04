@@ -8,7 +8,7 @@ const FoodPriceChanges = () => {
   const chartInstance = useRef(null);
   const [dataset, setDataset] = useState([]);
 
-  const foodItems = ["Rice", "Meat", "Fish", "Eggs", "Oil", "Salt"]; // Selected food items
+  const foodItems = ["Rice", "Meat", "Sugar", "Eggs", "Oil", "Sorghum", "Beef"]; // Selected food items
 
   useEffect(() => {
     fetch("/wfp_food_prices_nga.csv")
@@ -73,7 +73,7 @@ const FoodPriceChanges = () => {
           plugins: {
             title: {
               display: true,
-              text: "Price Changes for Rice, Meat, Fish, Eggs, Oil, and Salt",
+              text: "Price Changes for Rice, Meat, Sugar, Eggs, Oil, Sorghum and Beef",
             },
           },
           scales: {
@@ -98,7 +98,7 @@ const FoodPriceChanges = () => {
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>
-        Price Changes for Rice, Meat, Fish, Eggs, Oil, and Salt
+        Price Changes for Rice, Meat, Sugar, Eggs, Oil,Sorghum and Beef
       </h1>
       <canvas id="food-chart" style={styles.chart}></canvas>
     </div>
